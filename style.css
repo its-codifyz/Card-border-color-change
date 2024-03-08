@@ -1,0 +1,58 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: black;
+}
+.card{
+    display: grid;
+    place-items: center;
+    position: relative;
+    height: 500px;
+    width: 350px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: rgb(236, 236, 236);
+}
+p{
+    font-size: 3rem;
+    font-weight: bold;
+    z-index: 1;
+}
+i{
+    font-size: 10em;
+    z-index: 2;
+}
+.card{
+    overflow: hidden;
+}
+.card::before{
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 180%;
+    background: rgb(255, 0, 0);
+    transform: rotate(45deg);
+    animation: animation 2s linear infinite;
+}
+.card::after{
+    content: "";
+    position: absolute;
+    inset: 5px;
+    background: rgb(236, 236, 236);
+}
+@keyframes animation{
+    form{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
